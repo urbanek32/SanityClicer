@@ -6,12 +6,12 @@ public class InputManager : MonoBehaviour
 {
     public MainClicker mainClicker;
 
-	void Start ()
+    private void Start ()
     {
 		
 	}
-	
-	void Update ()
+
+    private void Update ()
     {
 		HandleMouse();
 	}
@@ -25,7 +25,6 @@ public class InputManager : MonoBehaviour
             {
                 if (hit.collider.tag == "MainClicker")
                 {
-                    Debug.Log("click");
                     mainClicker.OnMouseClicked();
                 }
             }
