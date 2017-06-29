@@ -1,20 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainClicker : MonoBehaviour
 {
     public float ShakeSpeed;
     public Animator Animator;
 
-	void Start ()
+    public float Score;
+    public float ScoreMultiplier = 1.0f;
+
+    public Text ScoreText;
+
+    private void Start()
     {
 		
 	}
 	
-	void Update ()
+	private void Update()
 	{
-	    
+	    UpdateUi();
 	}
 
     public void ShakeIt()
@@ -28,5 +34,16 @@ public class MainClicker : MonoBehaviour
     public void OnMouseClicked()
     {
         Animator.SetTrigger("Active");
+        AddClickedScore();
+    }
+
+    public void AddClickedScore()
+    {
+        Score += ScoreMultiplier;
+    }
+
+    private void UpdateUi()
+    {
+        ScoreText.text = string.Format("{0}", Score);
     }
 }

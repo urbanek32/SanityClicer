@@ -6,12 +6,12 @@ public class InputManager : MonoBehaviour
 {
     public MainClicker mainClicker;
 
-    private void Start ()
+    private void Start()
     {
 		
 	}
 
-    private void Update ()
+    private void Update()
     {
 		HandleMouse();
 	}
